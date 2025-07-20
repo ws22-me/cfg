@@ -85,5 +85,3 @@ bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
 bindkey "\e[5C" forward-word
 bindkey "\e[5D" backward-word
-
-. "$HOME/.local/bin/env"
