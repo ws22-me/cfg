@@ -33,11 +33,3 @@ alias mv='mv -i'
 HISTSIZE= 
 HISTFILESIZE=
 
-export PATH=$PATH:$HOME/setup/tools/bin/nvim-linux64/bin:$HOME/setup/tools/bin
-
-# Enable zoxide and atuin
-[[ -z $(which zoxide) ]] || eval "$(zoxide init bash)"
-[[ -z $(which atuin) ]] || eval "$(atuin init bash --disable-up-arrow)"
-
-# eval `ssh-agent -s`
-alias config='$(which git) --git-dir=/root/.cfg/ --work-tree=/root'

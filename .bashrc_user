@@ -100,24 +100,3 @@ alias l='ls -CF'
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-
-# Enable zoxide and atuin
-[[ -z $(which zoxide) ]] || eval "$(zoxide init bash)"
-[[ -z $(which atuin) ]] || eval "$(atuin init bash --disable-up-arrow)"
-
-# alias for config
-alias config='$(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-export PATH=$PATH:$HOME/setup/tools/bin/nvim-linux64/bin:$HOME/setup/tools/bin
-
-

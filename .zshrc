@@ -66,22 +66,8 @@ alias l='ls -CF'
 # Source aliases file if it exists
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 
-# Enable completion
-autoload -Uz compinit
-compinit
-# Source system-wide completions if available
-[[ -f /usr/share/zsh/functions/Completion/zsh_completion ]] && source /usr/share/zsh/functions/Completion/zsh_completion
-[[ -f /etc/zsh_completion ]] && source /etc/zsh_completion
-
-# Enable zoxide and atuin if installed
-command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
-command -v atuin &>/dev/null && eval "$(atuin init zsh --disable-up-arrow)"
-
-# Config alias and PATH
-alias config='$(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-export PATH=$PATH:$HOME/setup/tools/bin/nvim-linux64/bin:$HOME/setup/tools/bin
-
 bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
 bindkey "\e[5C" forward-word
 bindkey "\e[5D" backward-word
+
